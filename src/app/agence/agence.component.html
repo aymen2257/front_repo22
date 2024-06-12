@@ -1,0 +1,26 @@
+<div class="agence-wrapper">
+  <div class="map-container" id="map" *ngIf="isBrowser"></div>
+  <div class="data-container">
+    <h2>Les agences prés de vous</h2>
+    <div class="dropdown-container">
+      <label for="governorateSelect" class="dropdown-label">Selectionnez Votre Gouvernorat:</label>
+      <select id="governorateSelect" class="dropdown-select" [(ngModel)]="selectedGovernorate" (change)="onGovernorateChange()">
+        <option value="" disabled selected>Choose...</option>
+        <option *ngFor="let governorate of governorates" [value]="governorate">{{ governorate }}</option>
+  
+      </select>
+      <br>
+      <button class="bt-agence" (click)="findNearestAgency()">Trouver l'agence la plus proche</button>
+      <br>
+    </div>
+    <div class="agency-list-container" *ngIf="agencies.length > 0">
+      <ul class="agency-list">
+        <li *ngFor="let agency of agencies" class="agency-item">
+          <strong>Nom:</strong> {{ agency.name }}<br>
+          <strong>Adresse:</strong> {{ agency.address }}<br>
+          <strong>Gouvernorat:</strong> {{ agency.governorate }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

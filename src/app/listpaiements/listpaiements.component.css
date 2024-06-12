@@ -1,0 +1,119 @@
+/*.payment-details {
+    padding: 20px;
+
+    margin:100px;
+}
+
+
+.p-table {
+    margin: 20px 0;
+    
+    border-collapse: collapse;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.p-table thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+.p-table tbody tr td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.no-payments {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .p-table thead th, .p-table tbody tr td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .p-table thead th {
+        display: none;
+    }
+    
+    .p-table tbody tr {
+        margin-bottom: 10px;
+     
+        border-radius: 8px;
+    }
+    
+    .p-table tbody tr td {
+        padding: 10px;
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .p-table tbody tr td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex-basis: 40%;
+    }
+    h1{
+        text-align: center;
+        font-family: "Poppins", sans-serif !important;
+    }
+    .titre{
+        align-self: center;
+    }
+}*/
+.tables .table {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tables h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

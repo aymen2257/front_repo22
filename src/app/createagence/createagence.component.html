@@ -1,0 +1,35 @@
+<div class="container containerReclamation">
+    <h1>Ajouter  Agence</h1>
+    <form (ngSubmit)="createAgence()">
+      <div class="form-group">
+        <label for="name">Nom Agence</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="agence.name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Addresse</label>
+        <input type="text" class="form-control" id="address" [(ngModel)]="agence.address" name="address" required>
+      </div>
+      <div class="form-group">
+        <label for="governorate">Gouvernorat</label>
+        <input type="text" class="form-control" id="governorate" [(ngModel)]="agence.governorate" name="governorate" required>
+      </div>
+      <div class="form-group">
+        <label for="codepostale">Code Postale</label>
+        <input type="text" class="form-control" id="codepostale" [(ngModel)]="agence.codepostale" name="codepostale" required>
+      </div>
+      <div class="form-group">
+        <label for="cite">Cité</label>
+        <input type="text" class="form-control" id="cite" [(ngModel)]="agence.cite" name="cite" required>
+      </div>
+      <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input type="number" step="any" class="form-control" id="latitude" [(ngModel)]="agence.latitude" name="latitude" required>
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input type="number" step="any" class="form-control" id="longitude" [(ngModel)]="agence.longitude" name="longitude" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>
+  

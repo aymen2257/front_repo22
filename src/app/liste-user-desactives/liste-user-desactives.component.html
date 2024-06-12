@@ -1,0 +1,59 @@
+<!-- NAVBAR -->
+<section id="content">
+    <!-- MAIN -->
+    <main>
+        <h1 class="title">Dashboard</h1>
+        <ul class="breadcrumbs">
+            <li><a href="#">Users</a></li>
+            <li class="divider">/</li>
+            <li><a href="#" class="active">Dashboard</a></li>
+        </ul>
+        <div class="data">
+            <div class="content-data">
+                <div class="containerListe">
+                    <h1>Liste Adherents desactives </h1>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Nom</th>
+                                    <th>prenom</th>
+                                    <th>Num Adherent</th>
+                                    <th>email</th>
+                                    <th>Addresse</th>
+                                    <th>CIN</th>
+                                    <th>Sex</th>
+                                    <th>Date Naissance</th>
+                                    <th>Reactiver</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let user of users">
+                                    <tr>
+                                        <td>{{user.id}}</td>
+                                        <td>{{user.nom}}</td>
+                                        <td>{{user.prenom}}</td>
+                                        <td>{{user.num}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>{{user.address}}</td>
+                                        <td>{{user.cin}}</td>
+                                        <td>{{user.sex}}</td>
+                                        <td>{{ user.birth_date | date:'yyyy' }}</td>
+
+                                        <td><button class="btn btn-secondary" (click)="reactiver(user)">Reactiver</button></td>
+                                    </tr>
+                                </ng-container>
+                                <!-- Ajoutez d'autres lignes de contrats ici si nécessaire -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- NAVBAR -->
+  
+

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --grey: #F1F0F6;
+  --dark-grey: #8D8D8D;
+  --light: #fff;
+  --dark: #000;
+  --green: #81D43A;
+  --light-green: #E3FFCB;
+  --blue: #1775F1;
+  --light-blue: #D0E4FF;
+  --dark-blue: #0C5FCD;
+  --red: #FC3B56;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--grey);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.containerReclamation {
+  max-width: 500px;
+  margin: 15px auto 15px auto;
+  padding: 20px;
+  
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerReclamation h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.containerReclamation form {
+  display: grid;
+  gap: 20px;
+}
+
+.containerReclamation form .form-group {
+  text-align: left;
+}
+
+.containerReclamation form .form-group label {
+  font-weight: bold;
+}
+
+.containerReclamation form .form-group input[type="text"],
+.containerReclamation form .form-group input[type="email"],
+.containerReclamation form .form-group select,
+.containerReclamation form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.containerReclamation form .form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.containerReclamation form .form-group input[type="file"] {
+  width: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.containerReclamation form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: var(--light);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.containerReclamation form button:hover {
+  background-color: #3e8155;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  border: none;
+  padding: 10px 20px;
+  color: var(--light);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-blue);
+}
+
+@media (max-width: 768px) {
+  .containerReclamation {
+    margin-top: 20px;
+  }
+}

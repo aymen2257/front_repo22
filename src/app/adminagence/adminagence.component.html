@@ -1,0 +1,46 @@
+<div class="container agence-container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Liste des agences</h2>
+      <button class="btn btn-success" routerLink="/createagence">Ajouter nouvelle Agence</button>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Addresse</th>
+              <th>Gouvernorat</th>
+              <th>Code Postale</th>
+              <th>Cité</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let agence of agencies" (click)="selectedAgence = agence">
+              <td>{{ agence.name }}</td>
+              <td>{{ agence.address }}</td>
+              <td>{{ agence.governorate }}</td>
+              <td>{{ agence.codepostale }}</td>
+              <td>{{ agence.cite }}</td>
+              <td>{{ agence.latitude }}</td>
+              <td>{{ agence.longitude }}</td>
+              <td>
+                <button class="btn btn-primary action-btn" routerLink="/updateagence/{{agence.id}}" (click)="$event.stopPropagation()">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-danger action-btn" (click)="deleteAgence(agence); $event.stopPropagation()">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-12">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>

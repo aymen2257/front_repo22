@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrats</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
+    <div class="text-700 text-xl mb-6 text-center line-height-3">Liste de tous vos contrats actifs et expirés</div>
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let contrat of contrats">
+        <div class="p-3 h-full">
+          <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
+            <div class="text-900 font-medium text-xl mb-2">{{ contrat.branche.libelleBranche }}</div>
+            <div class="text-600">{{ contrat.numContrat }}</div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <div class="flex align-items-center">
+              <span class="font-bold text-2xl text-900">{{ contrat.prix }}</span>
+              <span class="ml-2 font-medium text-600">par an</span>
+            </div>
+            <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+            <ul class="list-none p-0 m-0 flex-grow-1">
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Date Effet: {{ contrat.date_effet | date: 'dd/MM/yyyy' }}</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Date Fin: {{ contrat.date_fin_effet | date: 'dd/MM/yyyy' }}</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">Référencement: {{ contrat.referencement }}</span>
+              </li>
+              <li class="flex align-items-center mb-3">
+                <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                <span class="text-900">{{ contrat.paye ? 'payé' : 'non payé' }}</span>
+              </li>
+            </ul>
+            <hr class="mb-3 mx-0 border-top-1 border-none surface-border mt-auto" />
+            <button class="p-3 w-full mt-auto" *ngIf="!contrat.paye" (click)="payForContrat(contrat.id)">Payer</button>
+            <button class="p-3 w-full mt-auto p-button-outlined" *ngIf="contrat.paye" (click)="navigate(contrat.id)">Imprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

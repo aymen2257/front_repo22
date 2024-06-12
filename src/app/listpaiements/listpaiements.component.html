@@ -1,0 +1,46 @@
+<!--<div class="payment-details">
+    <div class="titre"><h1>Paiements effectués</h1></div> 
+    <p-table [value]="payments" [paginator]="true" [rows]="10" [totalRecords]="totalRecords" [lazy]="true" [loading]="loading" (onLazyLoad)="onPageChange($event)" [scrollable]="true" scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Référencement du Contrat</th>
+                <th>Date de Paiement</th>
+                <th>Montant (TND)</th>
+                <th>Statut</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-payment>
+            <tr>
+                <td>{{ payment.contrat.referencement }}</td>
+                <td>{{ payment.datePaiement | date:'dd/MM/yyyy HH:mm' }}</td> <!-- European 24-hour format 
+                <td>{{ payment.amount }}</td>
+                <td>{{ payment.status }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div *ngIf="payments.length === 0" class="no-payments">
+        <p>Aucun paiement trouvé.</p>
+    </div>
+</div> -->
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Référencement du Contrat</th>
+                <th>Date de Paiement</th>
+                <th>Montant (TND)</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let payment of payments">
+                <td>{{ payment.contrat.referencement }}</td>
+                <td>{{ payment.datePaiement | date:'dd/MM/yyyy HH:mm' }}</td> 
+                <td>{{ payment.amount }}</td>
+                <td>{{ payment.status }}</td>
+            </tr>
+
+          
+        </tbody>
+    </table>
+</div>

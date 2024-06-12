@@ -1,0 +1,105 @@
+<div class="container">
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <section class="cards">
+        <div class="card">
+            <i class="fa-solid fa-file-contract"></i>
+            <div class="card-content">
+                <h2>contrats</h2>
+                <p>{{numContrats}}</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <i class="fa-solid fa-comments-dollar"></i>
+                <h2>Reclamations</h2>
+                <p>{{numReclamations}}</p>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-credit-card"></i>
+            <div class="card-content">
+                <h2>les paiements</h2>
+                <p>{{totalRecords}}</p>
+            </div>
+        </div>
+    </section>
+    <section class="tables">
+        <div class="table">
+            <h2>Liste Contrats</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NumContrat</th>
+                        <th>Branche</th>
+                        <th>Produit</th>
+                        <th>prix</th>
+                        <th>dateEffet</th>
+                        <th>dateFinEffet</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let contrat of contrats">
+                        <td>{{contrat.id}}</td>
+                        <td>{{ contrat.numContrat }}</td>
+                        <td>{{ contrat.branche.libelleBranche }}</td>
+                        <td>{{ contrat.produit.nom }}</td>
+                        <td>{{contrat.prix}}</td>
+                        <td>{{ contrat.date_effet | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ contrat.date_fin_effet | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ contrat.paye ? 'payé' : 'non payé' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table">
+            <h2>Liste Reclamations </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>sujet</th>
+                        <th>description</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reclamation of reclamations">
+                        <td>{{ reclamation.id }}</td>
+                        <td>{{ reclamation.sujet }}</td>
+                        <td>{{ reclamation.description }}</td>
+                        <td>{{ reclamation.status }}</td>
+                    </tr>
+
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+        <div class="table">
+            <h2>Liste Paiements </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Référencement du Contrat</th>
+                        <th>Date de Paiement</th>
+                        <th>Montant (TND)</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let payment of payments">
+                        <td>{{ payment.contrat.referencement }}</td>
+                        <td>{{ payment.datePaiement | date:'dd/MM/yyyy HH:mm' }}</td> 
+                        <td>{{ payment.amount }}</td>
+                        <td>{{ payment.status }}</td>
+                    </tr>
+        
+                  
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
